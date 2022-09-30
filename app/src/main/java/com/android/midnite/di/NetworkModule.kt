@@ -1,5 +1,6 @@
 package com.android.midnite.di
 
+import com.android.midnite.BuildConfig
 import com.android.midnite.data.api.MidniteApi
 import com.android.midnite.utils.DateTimeDeserializer
 import com.android.midnite.utils.DefaultDispatcherProvider
@@ -27,7 +28,7 @@ annotation class BaseUrl
 @InstallIn(SingletonComponent::class)
 open class NetworkModule {
 
-    open fun getBaseUrl() = BASE_URL
+    open fun getBaseUrl() = BuildConfig.BASE_URL
 
     open fun getDispatchers(): DispatcherProvider = DefaultDispatcherProvider()
 
@@ -86,6 +87,5 @@ open class NetworkModule {
 
     companion object {
         private const val CONNECT_TIMEOUT = 10L
-        private const val BASE_URL = "https://api.midnite.com/"
     }
 }

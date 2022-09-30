@@ -28,11 +28,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "com.android.midnite.HiltTestRunner"
-        // TODO: Better way to extract the key would be to add it in local properties file
-        buildConfigField("String", "API_KEY", "\"2d021085c2e64c23927ff485d9f4299b\"")
     }
     buildTypes {
+        getByName("debug") {
+            buildConfigField("String", "BASE_URL", "\"https://api.midnite.com/\"")
+        }
         getByName("release") {
+            buildConfigField("String", "BASE_URL", "\"https://api.midnite.com/\"")
             isMinifyEnabled = false
         }
     }
