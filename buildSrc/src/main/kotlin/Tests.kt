@@ -7,7 +7,7 @@ object Tests {
     private const val mockkVersion = "1.12.0"
 
     private const val espressoCoreVersion = "3.5.0-alpha04"
-    private const val robolectricVersion = "4.7.3"
+    private const val robolectricVersion = "4.9-alpha-1"
 
     // AndroidX Test - Instrumented testing
     private const val archCoreTesting = "2.1.0"

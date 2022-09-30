@@ -44,4 +44,11 @@ class GetMatchDetailsUseCaseTest {
         val actual = underTest.execute(7)
         Assert.assertTrue(actual.data != null)
     }
+
+    @Test
+    fun `given when execute is called and the request is not successful, verify that the correct data is returned`() = runTest {
+        coEvery { midniteRemoteRepository.getMatchDetails(any()) } returns ApiResult.NetworkError(Exception())
+        val actual = underTest.execute(7)
+        Assert.assertTrue(actual.data == null)
+    }
 }

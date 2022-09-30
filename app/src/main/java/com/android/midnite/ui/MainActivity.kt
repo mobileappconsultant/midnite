@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import coil.annotation.ExperimentalCoilApi
-import com.android.midnite.ui.theme.NewsFeedTheme
+import com.android.midnite.ui.theme.MidniteTheme
 import com.android.midnite.ui.navigation.MainNavigation
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,15 +20,15 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            NewsFeedApp()
+            MidniteApp()
         }
     }
 }
 
 @OptIn(ExperimentalCoilApi::class, ExperimentalComposeUiApi::class)
 @Composable
-fun NewsFeedApp() {
-    NewsFeedTheme {
+fun MidniteApp() {
+    MidniteTheme {
         // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier
